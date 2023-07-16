@@ -2,6 +2,9 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_URL:  https://github.com/entbappy/Branching-tutorial/raw/master/summarizer-data.zip
+  source_URL: https://github.com/tproma/End-To-End-NLP-Project-News-Article-Sorting/blob/main/Data/learn-ai-bbc.zip
   local_data_file:  artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
+
+
+  
