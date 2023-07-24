@@ -2,7 +2,7 @@
 
 ### Step 1: Create condsa environment
 ```
-conda create -n textSort python==3.8 -y
+conda create -n textSort python=3.8 -y
 ```
 ```
 conda activate textSort
