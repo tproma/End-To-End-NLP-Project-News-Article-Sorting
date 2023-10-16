@@ -14,6 +14,9 @@ pip install -r requirements.txt
 ```
 
 
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+
 ## Workflows
 - update config.yaml
 - update  params.yaml
