@@ -13,9 +13,10 @@ conda activate textSort
 pip install -r requirements.txt
 ```
 
-
+# For pytorch cuda version
+``` 
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-
+```
 
 ## Workflows
 - update config.yaml
