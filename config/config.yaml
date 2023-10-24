@@ -10,4 +10,4 @@ data_ingestion:
 data_validation:
     root_dir: artifacts/data_validation
     STATUS_FILE:  artifacts/data_validation/status.txt
-    ALL_REQUIRED_FILES: ["BBC News Train.csv", "BBC News Test.csv", "BBC News Sample Solution.csv"]
+    ALL_REQUIRED_FILES: ["data.zip","BBC News Train.csv", "BBC News Test.csv", "BBC News Sample Solution.csv"]
