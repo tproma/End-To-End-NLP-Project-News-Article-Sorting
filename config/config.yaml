@@ -11,3 +11,9 @@ data_validation:
     root_dir: artifacts/data_validation
     STATUS_FILE:  artifacts/data_validation/status.txt
     ALL_REQUIRED_FILES: ["data.zip","BBC News Train.csv", "BBC News Test.csv", "BBC News Sample Solution.csv"]
+
+
+data_transformation:
+    root_dir: artifacts/data_transformation
+    data_path: artifacts/data_ingestion
+    tokenizer_name: bert-base-uncased
