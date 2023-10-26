@@ -2,7 +2,7 @@ from ArticleSorting.config.configuration import ConfigurationManager
 from ArticleSorting.components.data_transformation import DataTransformation
 from ArticleSorting.logging import logger
 
-class DataValidationTrainingPipeline():
+class DataTransformationTrainingPipeline():
     def __init__(self):
         pass
 
