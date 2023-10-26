@@ -1,5 +1,6 @@
 import os
 from ArticleSorting.logging import logger
+from ArticleSorting.entity import DataTransformationConfig
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from datasets import Dataset
