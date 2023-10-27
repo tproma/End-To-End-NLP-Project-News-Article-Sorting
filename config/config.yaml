@@ -14,9 +14,9 @@ data_validation:
 
 
 data_transformation:
-    root_dir: artifacts/data_transformation
-    data_path: artifacts/data_ingestion/BBC News Train.csv
-    tokenizer_name: bert-base-uncased
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/BBC News Train.csv
+  tokenizer_name: bert-base-uncased
    
 
 model_treainer:
