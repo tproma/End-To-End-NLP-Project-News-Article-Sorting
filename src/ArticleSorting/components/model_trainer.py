@@ -6,7 +6,8 @@ from datasets import load_from_disk
 
 import evaluate
 import numpy as np
-
+import os
+from ArticleSorting.entity import ModeTrainerConfig
 
 class ModeTrainer:
     def __init__(self, config: ModeTrainerConfig) :
