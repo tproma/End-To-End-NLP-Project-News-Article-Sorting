@@ -18,6 +18,17 @@ pip install -r requirements.txt
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 ```
 
+```
+pip install -U scikit-learn
+```
+
+#Necessary for running the training arguments
+```
+pip install --upgrade accelerate
+pip install -y transformers accelerate
+pip install transformers accelerate
+```
+
 ## Workflows
 - update config.yaml
 - update  params.yaml
