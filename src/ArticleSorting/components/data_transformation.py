@@ -18,7 +18,7 @@ class DataTransformation:
         
 
     def encode_categories(self):
-        
+
         df = pd.read_csv(self.config.data_path)
         df['encoded_label'] = df['Category'].astype('category').cat.codes
 
@@ -42,15 +42,30 @@ class DataTransformation:
                      truncation=True,
                      padding="max_length")
     
+    
     def convert(self):
-        data = self.encode_categories()
-        tokenized_data = data.map(self.tokenize_dataset)
-        # Remove  columnms
-        tokenized_data = tokenized_data.remove_columns(["ArticleId", "Text", "Category"])
-        # Rename label to labels because the model expects the name labels
-        dataset = tokenized_data.rename_column("encoded_label", "labels")
-        # Change the format to PyTorch tensors
-        dataset.set_format("torch")
-        print(dataset)
+       
+        hg_train_data, hg_test_data = self.encode_categories()
 
-        dataset.save_to_disk(os.path.join(self.config.root_dir,"BBC dataset"))
+        # Tokenize the dataset
+        dataset_train = hg_train_data.map(self.tokenize_dataset)
+        dataset_test = hg_test_data.map(self.tokenize_dataset)
+        
+        # Remove the review and index columns because it will not be used in the model
+        dataset_train = dataset_train.remove_columns(["ArticleId", "Text", "Category", "__index_level_0__"])
+        dataset_test = dataset_test.remove_columns(["ArticleId", "Text", "Category", "__index_level_0__"])
+
+        # Rename label to labels because the model expects the name labels
+        dataset_train = dataset_train.rename_column("encoded_label", "labels")
+        dataset_test = dataset_test.rename_column("encoded_label", "labels")
+
+        # Change the format to PyTorch tensors
+        dataset_train.set_format("torch")
+        dataset_test.set_format("torch")
+
+        # Take a look at the data
+        print(dataset_train)
+        print(dataset_test)
+
+        dataset_train.save_to_disk(os.path.join(self.config.root_dir,"Train BBC dataset"))
+        dataset_test.save_to_disk(os.path.join(self.config.root_dir,"Test BBC dataset"))
