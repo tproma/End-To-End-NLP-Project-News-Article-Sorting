@@ -18,12 +18,24 @@ class DataTransformation:
         
 
     def encode_categories(self):
-        self.df = pd.read_csv(self.config.data_path)
-        self.df['encoded_label'] = self.df['Category'].astype('category').cat.codes
-        hg_data = Dataset.from_pandas(self.df)
-        print(hg_data)
-        return hg_data
-   
+        
+        df = pd.read_csv(self.config.data_path)
+        df['encoded_label'] = df['Category'].astype('category').cat.codes
+
+        ## Spliting the Data
+        # Training dataset
+        train_data = df.sample(frac=0.8, random_state=42)
+        # Testing dataset
+        test_data = df.drop(train_data.index)
+
+        # Convert pyhton dataframe to Hugging Face arrow dataset
+        hg_train_data = Dataset.from_pandas(train_data)
+        hg_test_data = Dataset.from_pandas(test_data)
+        print(hg_train_data, hg_test_data)
+        return hg_train_data, hg_test_data
+
+
+
     def tokenize_dataset(self, data):
         return self.tokenizer(data["Text"],
                      max_length=512,
