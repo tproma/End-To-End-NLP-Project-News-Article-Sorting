@@ -1,6 +1,7 @@
 transformers
 transformers[sentencepiece]
 datasets
+scikit-learn
 sacrebleu
 rouge-score
 py7zr
