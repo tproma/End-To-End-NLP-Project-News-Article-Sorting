@@ -18,7 +18,7 @@ class PredictionPipeline:
         print("Dialogue:")
         print(text)
 
-        output = pipe(text, **gen_kwargs)[0]["summary_text"]
+        output = pipe(text)[0]["summary_text"]
         print("\nModel Summary:")
         print(output)
 
