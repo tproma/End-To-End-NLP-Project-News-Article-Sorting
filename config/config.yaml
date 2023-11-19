@@ -26,10 +26,10 @@ model_trainer:
   model_ckpt: bert-base-uncased
    
 
-  model_evaluation:
-    root_dir: artifacts/model_evaluation
-    train_data_path: artifacts/data_transformation/Train BBC dataset
-    test_data_path: artifacts/data_transformation/Test BBC dataset
-    model_path:  artifacts/model_trainer/bert-base-uncased-model
-    tokenizer_path:  artifacts/model_trainer/tokenizer
-    metric_file_name: artifacts/model_evaluation/metric.csv
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  train_data_path: artifacts/data_transformation/Train BBC dataset
+  test_data_path: artifacts/data_transformation/Test BBC dataset
+  model_path:  artifacts/model_trainer/bert-base-uncased-model
+  tokenizer_path:  artifacts/model_trainer/tokenizer
+  metric_file_name: artifacts/model_evaluation/metric.csv
