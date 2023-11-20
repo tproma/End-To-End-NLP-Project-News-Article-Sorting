@@ -55,27 +55,34 @@ class DataTransformation:
     
     def convert(self):
        
-        hg_train_data, hg_test_data = self.encode_categories()
+        hg_train_data, hg_test_data, hg_val_data = self.encode_categories()
 
         # Tokenize the dataset
         dataset_train = hg_train_data.map(self.tokenize_dataset)
         dataset_test = hg_test_data.map(self.tokenize_dataset)
-        
+        dataset_val = hg_val_data.map(self.tokenize_dataset)
+
         # Remove the review and index columns because it will not be used in the model
         dataset_train = dataset_train.remove_columns(["ArticleId", "Text", "Category", "__index_level_0__"])
         dataset_test = dataset_test.remove_columns(["ArticleId", "Text", "Category", "__index_level_0__"])
+        dataset_val = dataset_val.remove_columns(["ArticleId", "Text", "Category", "__index_level_0__"])
 
         # Rename label to labels because the model expects the name labels
         dataset_train = dataset_train.rename_column("encoded_label", "labels")
         dataset_test = dataset_test.rename_column("encoded_label", "labels")
+        dataset_val = dataset_val.rename_column("encoded_label", "labels")
 
         # Change the format to PyTorch tensors
         dataset_train.set_format("torch")
         dataset_test.set_format("torch")
+        dataset_val.set_format("torch")
 
         # Take a look at the data
         print(dataset_train)
         print(dataset_test)
+        print(dataset_val)
 
+        # Saving the datasets
         dataset_train.save_to_disk(os.path.join(self.config.root_dir,"Train BBC dataset"))
         dataset_test.save_to_disk(os.path.join(self.config.root_dir,"Test BBC dataset"))
+        dataset_val.save_to_disk(os.path.join(self.config.root_dir,"Validation BBC dataset"))
