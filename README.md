@@ -38,3 +38,8 @@ pip install transformers accelerate
 - update the pipelines
 - update main.py
 - update app.py
+
+
+### ARTICLES
+    - How to iterate through the dataset using DataLoader
+    https://towardsdatascience.com/how-to-use-datasets-and-dataloader-in-pytorch-for-custom-text-data-270eed7f7c00
