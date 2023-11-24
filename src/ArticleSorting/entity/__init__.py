@@ -24,7 +24,6 @@ class DataTransformationConfig:
     tokenizer_name: Path
 
 
-
 @dataclass(frozen= True)
 class ModeTrainerConfig:
   root_dir: Path
@@ -41,3 +40,13 @@ class ModeTrainerConfig:
   evaluation_strategy: str
   save_strategy: str
   load_best_model_at_end: bool   
+
+
+
+@dataclass(frozen= True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path:Path
+    model_path:  Path
+    tokenizer_path: Path
+    metric_file_name: Path
