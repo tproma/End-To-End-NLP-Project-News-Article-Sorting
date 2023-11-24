@@ -6,6 +6,7 @@ from tqdm import tqdm
 import evaluate
 from torch.utils.data import DataLoader
 import numpy as np
+from ArticleSorting.entity import ModelEvaluationConfig
 
 
 class ModelEvaluation:
