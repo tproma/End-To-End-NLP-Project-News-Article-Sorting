@@ -51,9 +51,8 @@ class ModelEvaluation:
         print(f'Labels : {test_dataset["labels"]}')
         print(f'Test Accuracy: {Test_Accuracy: .3f}')
         
-        
-        torch.cuda.empty_cache()
-
-        
+           
         df = pd.DataFrame([Test_Accuracy], index=['bert'])
         df.to_csv(self.config.metric_file_name, index=False)
+
+        torch.cuda.empty_cache()
