@@ -3,7 +3,9 @@ from ArticleSorting.utils.common import read_yaml, create_directories
 from ArticleSorting.entity import (DataIngestionConfig,
                                    DataValidationConfig,
                                    DataTransformationConfig,
-                                   ModeTrainerConfig
+                                   ModeTrainerConfig,
+                                   ModelEvaluationConfig
+
 )
 
 class ConfigurationManager:
