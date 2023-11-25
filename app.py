@@ -26,3 +26,16 @@ async def training():
         return Response("Training successful !!")
     except Exception as e:
         return Response(f"Error Occurred! {e}")
+    
+
+
+
+@app.post("/predict")
+async def predict_route(text):
+    try:
+
+        obj = PredictionPipeline()
+        text = obj.predict(text)
+        return text
+    except Exception as e:
+        raise e
