@@ -13,7 +13,7 @@ class PredictionPipeline:
         tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
         
 
-        pipe = pipeline("classification", model=self.config.model_path,tokenizer=tokenizer)
+        pipe = pipeline("text-classification", model=self.config.model_path,tokenizer=tokenizer)
 
         print("Dialogue:")
         print(text)
