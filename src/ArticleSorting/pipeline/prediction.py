@@ -15,11 +15,11 @@ class PredictionPipeline:
 
         pipe = pipeline("text-classification", model=self.config.model_path,tokenizer=tokenizer)
 
-        print("Dialogue:")
+        print("Text: ")
         print(text)
 
-        output = pipe(text)[0]["summary_text"]
-        print("\nModel Summary:")
+        output = pipe(text)
+        print("\nText Category:")
         print(output)
 
         return output
