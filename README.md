@@ -29,6 +29,11 @@ pip install -y transformers accelerate
 pip install transformers accelerate
 ```
 
+```
+python app.py
+```
+
+
 ## Workflows
 - update config.yaml
 - update  params.yaml
