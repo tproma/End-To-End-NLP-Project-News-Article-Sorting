@@ -1,6 +1,15 @@
 # End-To-End-NLP-Project-News-Article-Sorting
 The primary objective of this project is to develop an automated system capable of accurately classifying news articles into predefined categories using state-of-the-art NLP models. The project involves fine-tuning bert-base-uncased on the collected dataset to adapt its knowledge to the specific classification task. This step enables the model to learn the nuances and patterns within the news articles.
 
+### Tech-stack used
+- Python
+- PyTorch
+- Hugging Face Transformers Library
+- Docker 
+- Flask
+- GitHub Actions
+- AWS cloud Services
+
 
 ### Step 1: Create condsa environment
 ```
@@ -31,7 +40,6 @@ pip install -y transformers accelerate
 pip install transformers accelerate
 ```
 
-
 ### To run the flask app
 ```
 python app.py
@@ -47,7 +55,6 @@ python app.py
 - update the pipelines
 - update main.py
 - update app.py
-
 
 
 # AWS-CICD-Deployment-with-Github-Actions
