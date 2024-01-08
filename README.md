@@ -19,10 +19,10 @@ The primary objective of this project is to develop an automated system capable 
 
 ### Step 1: Create condsa environment
 ```
-conda create -n textSort python=3.8 -y
+conda create -p venv python=3.8 -y
 ```
 ```
-conda activate textSort
+conda activate venv/
 ```
 
 ### Step 2: Install the requirements
@@ -50,7 +50,10 @@ pip install transformers accelerate
 ```
 python app.py
 ```
-
+### Checkout the FastAPI app in your local machine
+```
+http://localhost:8080/docs
+```
 
 ## Workflows
 - update config.yaml
